@@ -18,5 +18,8 @@
     "react"
   ],
   "author": "Niyomwungeri Parmenide Ishimwe",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
