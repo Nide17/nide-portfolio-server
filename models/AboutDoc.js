@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 // Database
 const db = require('../config/database')
 
-const AboutDocs = db.define(aboutDocs, {
+const AboutDoc = db.define('aboutDoc', {
     title: {
         type: Sequelize.STRING,
         allowNull: false
@@ -12,4 +12,4 @@ const AboutDocs = db.define(aboutDocs, {
     }
 })
 
-module.exports = AboutDocs
+module.exports = AboutDoc
