@@ -24,11 +24,15 @@ app.get('/', (req, res) => {
     res.send('INDEX')
 })
 
+// categories routes middleware
+app.use('/categories', require('./routes/categories'))
+
 // Subcategories routes middleware
 app.use('/subcategories', require('./routes/subCategories'))
 
-// categories routes middleware
-app.use('/categories', require('./routes/categories'))
+// Subcategories routes middleware
+app.use('/aboutdocs', require('./routes/aboutdocs'))
+
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, console.log(`Server running on port ${PORT}`))
