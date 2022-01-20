@@ -2,11 +2,14 @@ const Sequelize = require('sequelize')
 // Database
 const db = require('../config/database')
 
-const Category = db.define('category', {
+const SubCategories = db.define('subcategories', {
     title: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    categoryId: {
+        type: Sequelize.INTEGER
     }
 })
 
-module.exports = Category
+module.exports = SubCategories

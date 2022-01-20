@@ -2,23 +2,23 @@ const Sequelize = require('sequelize')
 // Database
 const db = require('../config/database')
 
-const AboutDoc = db.define('aboutdoc', {
+const AboutDocs = db.define('aboutdocs', {
     title: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    aws_link: {
+    awsLink: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    credential_link: {
+    credentialLink: {
         type: Sequelize.STRING
     },
-    cat_id: {
+    categoryId: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    sub_cat_id: {
+    subcategoryId: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
@@ -27,4 +27,4 @@ const AboutDoc = db.define('aboutdoc', {
     }
 })
 
-module.exports = AboutDoc
+module.exports = AboutDocs
