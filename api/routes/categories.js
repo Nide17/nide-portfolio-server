@@ -4,8 +4,10 @@ const router = express.Router()
 const db = require('../../config/database')
 const Categories = require('../../models/Categories')
 
-router.get('/', (req, res) =>
-    Categories.findAll()
+router.get('/', async (req, res) =>
+
+    await Categories.findAll()
+    
         .then(categories => {
             res.status(200).send(categories)
         })

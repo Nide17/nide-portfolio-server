@@ -15,7 +15,8 @@ AboutDocs.belongsTo(Categories);
 AboutDocs.belongsTo(SubCategories);
 
 router.get('/', async (req, res) =>
-    AboutDocs.
+
+    await AboutDocs.
         findAll({
             include: [{
                 model: Categories,
