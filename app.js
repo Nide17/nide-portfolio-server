@@ -31,7 +31,7 @@ app.use('/categories', require('./api/routes/categories'))
 app.use('/subcategories', require('./api/routes/subCategories'))
 
 // Subcategories routes middleware
-app.use('/aboutdocs', require('./api/routes/aboutdocs'))
+app.use('/aboutdocs', require('./api/routes/aboutDocs'))
 
 
 const PORT = process.env.PORT || 5000
