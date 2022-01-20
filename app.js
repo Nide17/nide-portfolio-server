@@ -1,4 +1,5 @@
 const express = require('express')
+var cors = require('cors')
 const path = require('path')
 
 // Database
@@ -6,6 +7,9 @@ const db = require('./config/database')
 
 // Initialize express
 const app = express()
+
+// Enabling cors
+app.use(cors())
 
 // Middlewares 1.Express body parser to access request body and 2. urlencoded to access form data
 app.use(express.json());
@@ -21,7 +25,7 @@ try {
 
 // Index route
 app.get('/', (req, res) => {
-    res.send('INDEX')
+    res.send('Welcome to Niyomwungeri Parmenide Ishimwe Portfolio')
 })
 
 // categories routes middleware
@@ -32,6 +36,9 @@ app.use('/subcategories', require('./api/routes/subCategories'))
 
 // Subcategories routes middleware
 app.use('/aboutdocs', require('./api/routes/aboutDocs'))
+
+// Contacts routes middleware
+app.use('/contacts', require('./api/routes/contacts'))
 
 
 const PORT = process.env.PORT || 5000
