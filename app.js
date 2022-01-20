@@ -7,7 +7,7 @@ const db = require('./config/database')
 // Initialize express
 const app = express()
 
-// 1.Body parser and 2.form data usage
+// Middlewares 1.Express body parser to access request body and 2. urlencoded to access form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -25,13 +25,13 @@ app.get('/', (req, res) => {
 })
 
 // categories routes middleware
-app.use('/categories', require('./routes/categories'))
+app.use('/categories', require('./api/routes/categories'))
 
 // Subcategories routes middleware
-app.use('/subcategories', require('./routes/subCategories'))
+app.use('/subcategories', require('./api/routes/subCategories'))
 
 // Subcategories routes middleware
-app.use('/aboutdocs', require('./routes/aboutdocs'))
+app.use('/aboutdocs', require('./api/routes/aboutdocs'))
 
 
 const PORT = process.env.PORT || 5000
