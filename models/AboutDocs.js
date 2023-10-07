@@ -3,6 +3,11 @@ const Sequelize = require('sequelize')
 const db = require('../config/database')
 
 const AboutDocs = db.define('aboutdocs', {
+    id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
     title: {
         type: Sequelize.STRING,
         allowNull: false
@@ -24,7 +29,15 @@ const AboutDocs = db.define('aboutdocs', {
     },
     provider: {
         type: Sequelize.STRING
-    }
+    },
+    createdAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+    },
+    updatedAt: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW
+    },
 })
 
 module.exports = AboutDocs
