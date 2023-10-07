@@ -4,13 +4,25 @@ const router = express.Router()
 const db = require('../../config/database')
 const Categories = require('../../models/Categories')
 
-router.get('/', async (req, res) =>
+router.get('/', async (req, res) => {
+    try {
+        const categories = await Categories.findAll()
+        console.log(categories)
 
-    await Categories.findAll()
-    
-        .then(categories => {
-            res.status(200).send(categories)
-        })
-        .catch(err => err))
-
+        if (categories) {
+            res.json({
+                success: true,
+                categories: categories
+            })
+        } else {
+            res.json({
+                success: false,
+                message: "No categories found"
+            })
+        }
+    }
+    catch (err) {
+        res.json({ message: err })
+    }
+})
 module.exports = router

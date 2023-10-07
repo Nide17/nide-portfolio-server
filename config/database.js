@@ -18,8 +18,8 @@ const Sequelize = require('sequelize')
 // });
 
 // Option 3: Passing parameters separately (other dialects)
-module.exports = new Sequelize('afzwulnw', 'afzwulnw', 'BvGa0WqOeOH3QoA9MVrtWSyShFT7wQWt', {
-    host: 'cornelius.db.elephantsql.com',
+module.exports = new Sequelize('portfolio_63b2', 'parmenide', '2BjxSqRIFJOjkA1s5k7EzTCd1zRrp7cE', {
+    host: 'dpg-ckgpd5cldqrs73eg8jq0-a.oregon-postgres.render.com',
     dialect: "postgres",
     dialectOptions: {
         ssl: {
