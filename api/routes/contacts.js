@@ -6,15 +6,34 @@ const db = require('../../config/database')
 const Contacts = require('../../models/Contacts')
 
 // Get all contacts
-router.get('/', async (req, res) =>
+router.get('/', async (req, res) => {
+    // await Contacts.findAll()
 
-    await Contacts.findAll()
+    //     .then(contacts => {
+    //         res.status(200).send(contacts)
+    //     })
 
-        .then(contacts => {
-            res.status(200).send(contacts)
-        })
+    //     .catch(err => err))
+    try {
+        const contacts = await Contacts.findAll()
+        console.log(contacts)
 
-        .catch(err => err))
+        if (contacts) {
+            res.json({
+                success: true,
+                contacts: contacts
+            })
+        } else {
+            res.json({
+                success: false,
+                message: "No contacts found"
+            })
+        }
+    }
+    catch (err) {
+        res.json({ message: err })
+    }
+})
 
 
 // create new contact message

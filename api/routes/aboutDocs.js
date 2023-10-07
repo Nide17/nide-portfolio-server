@@ -14,10 +14,25 @@ SubCategories.belongsTo(Categories);
 AboutDocs.belongsTo(Categories);
 AboutDocs.belongsTo(SubCategories);
 
-router.get('/', async (req, res) =>
+router.get('/', async (req, res) => {
+    // await AboutDocs.
+    //     findAll({
+    //         include: [{
+    //             model: Categories,
+    //             required: true
+    //         },
+    //         {
+    //             model: SubCategories,
+    //             required: true
+    //         }]
+    //     })
+    //     .then(aboutDocs => {
+    //         res.status(200).send(aboutDocs)
+    //     })
+    //     .catch(err => err))
 
-    await AboutDocs.
-        findAll({
+    try {
+        const aboutDocs = await AboutDocs.findAll({
             include: [{
                 model: Categories,
                 required: true
@@ -27,9 +42,24 @@ router.get('/', async (req, res) =>
                 required: true
             }]
         })
-        .then(aboutDocs => {
-            res.status(200).send(aboutDocs)
-        })
-        .catch(err => err))
+        console.log(aboutDocs)
+
+        if (aboutDocs) {
+            res.json({
+                success: true,
+                aboutDocs: aboutDocs
+            })
+        } else {
+            res.json({
+                success: false,
+                message: "No aboutDocs found"
+            })
+        }
+    }
+    catch (err) {
+        res.json({ message: err })
+    }
+
+})
 
 module.exports = router

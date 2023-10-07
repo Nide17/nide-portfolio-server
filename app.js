@@ -18,6 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 // Using .authenticate() function to test if the connection is OK
 try {
     db.authenticate();
+    // create tables if not exist
+    db.sync({ force: false })
     console.log('Database connected ...');
 } catch (error) {
     console.error('Unable to connect to the database:', error);
@@ -39,7 +41,6 @@ app.use('/aboutdocs', require('./api/routes/aboutDocs'))
 
 // Contacts routes middleware
 app.use('/contacts', require('./api/routes/contacts'))
-
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, console.log(`Server running on port ${PORT}`))

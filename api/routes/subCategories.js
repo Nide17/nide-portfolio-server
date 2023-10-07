@@ -4,12 +4,26 @@ const router = express.Router()
 const db = require('../../config/database')
 const SubCategories = require('../../models/SubCategories')
 
-router.get('/', async (req, res) =>
+router.get('/', async (req, res) => {
+    try {
+        const subCategories = await SubCategories.findAll()
+        console.log(subCategories)
 
-    await SubCategories.findAll()
-        .then(subCategories => {
-            res.status(200).send(subCategories)
-        })
-        .catch(err => err))
+        if (subCategories) {
+            res.json({
+                success: true,
+                subCategories: subCategories
+            })
+        } else {
+            res.json({
+                success: false,
+                message: "No subCategories found"
+            })
+        }
+    }
+    catch (err) {
+        res.json({ message: err })
+    }
+})
 
 module.exports = router
