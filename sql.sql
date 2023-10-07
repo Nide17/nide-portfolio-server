@@ -14,16 +14,6 @@ INSERT INTO categories(id,title,createdAt,updatedAt) VALUES (6,'Contracts','2022
 INSERT INTO categories(id,title,createdAt,updatedAt) VALUES (7,'Properties','2022-01-16','2022-01-16');
 INSERT INTO categories(id,title,createdAt,updatedAt) VALUES (8,'Jobs','2022-01-16','2022-01-16');
 
-
-
-
-
-
-
-
-
-
-
 CREATE TABLE subcategories(
    id         SERIAL  NOT NULL PRIMARY KEY 
   ,title      VARCHAR(100) NOT NULL
@@ -31,6 +21,7 @@ CREATE TABLE subcategories(
   ,createdAt  DATE  NOT NULL
   ,updatedAt  DATE  NOT NULL
 );
+
 INSERT INTO subcategories(id,title,categoryId,createdAt,updatedAt) VALUES (1,'Others',3,'2022-01-16','2022-01-16');
 INSERT INTO subcategories(id,title,categoryId,createdAt,updatedAt) VALUES (2,'English',3,'2022-01-16','2022-01-16');
 INSERT INTO subcategories(id,title,categoryId,createdAt,updatedAt) VALUES (3,'Programming',3,'2022-01-16','2022-01-16');
@@ -60,15 +51,6 @@ INSERT INTO subcategories(id,title,categoryId,createdAt,updatedAt) VALUES (26,'E
 INSERT INTO subcategories(id,title,categoryId,createdAt,updatedAt) VALUES (27,'REG',5,'2022-01-16','2022-01-16');
 INSERT INTO subcategories(id,title,categoryId,createdAt,updatedAt) VALUES (28,'UR',4,'2022-01-16','2022-01-16');
 INSERT INTO subcategories(id,title,categoryId,createdAt,updatedAt) VALUES (29,'GS St Aloys Rwamagana',4,'2022-01-16','2022-01-16');
-
-
-
-
-
-
-
-
-
 
 
 CREATE TABLE aboutdocs(
