@@ -1,9 +1,10 @@
 const express = require('express')
 var cors = require('cors')
-const path = require('path')
+const Sequelize = require('sequelize')
+require('dotenv').config()
 
 // Database
-const db = require('./config/database')
+const db = new Sequelize(process.env.PG_PORTFOLIO_URL)
 
 // Initialize express
 const app = express()
