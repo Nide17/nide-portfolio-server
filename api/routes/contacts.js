@@ -7,13 +7,6 @@ const Contacts = require('../../models/Contacts')
 
 // Get all contacts
 router.get('/', async (req, res) => {
-    // await Contacts.findAll()
-
-    //     .then(contacts => {
-    //         res.status(200).send(contacts)
-    //     })
-
-    //     .catch(err => err))
     try {
         const contacts = await Contacts.findAll()
         console.log(contacts)

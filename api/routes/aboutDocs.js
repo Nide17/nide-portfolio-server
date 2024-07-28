@@ -15,21 +15,6 @@ AboutDocs.belongsTo(Categories);
 AboutDocs.belongsTo(SubCategories);
 
 router.get('/', async (req, res) => {
-    // await AboutDocs.
-    //     findAll({
-    //         include: [{
-    //             model: Categories,
-    //             required: true
-    //         },
-    //         {
-    //             model: SubCategories,
-    //             required: true
-    //         }]
-    //     })
-    //     .then(aboutDocs => {
-    //         res.status(200).send(aboutDocs)
-    //     })
-    //     .catch(err => err))
 
     try {
         const aboutDocs = await AboutDocs.findAll({
