@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 // Database
-const db = require('../config/database')
+const db = new Sequelize(process.env.PG_PORTFOLIO_URL)
 
 const AboutDocs = db.define('aboutdocs', {
     id: {

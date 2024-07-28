@@ -1,7 +1,5 @@
 const express = require('express')
 const router = express.Router()
-// Bring DB and Model
-const db = require('../../config/database')
 const AboutDocs = require('../../models/AboutDocs')
 const Categories = require('../../models/Categories')
 const SubCategories = require('../../models/SubCategories')

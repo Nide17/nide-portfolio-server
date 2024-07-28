@@ -1,8 +1,5 @@
 const express = require('express')
 const router = express.Router()
-
-// Bring DB and Model
-const db = require('../../config/database')
 const Contacts = require('../../models/Contacts')
 
 // Get all contacts

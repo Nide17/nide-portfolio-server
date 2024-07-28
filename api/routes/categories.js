@@ -1,7 +1,5 @@
 const express = require('express')
 const router = express.Router()
-// Bring DB and Model
-const db = require('../../config/database')
 const Categories = require('../../models/Categories')
 
 router.get('/', async (req, res) => {
